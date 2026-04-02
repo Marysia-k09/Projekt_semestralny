@@ -36,5 +36,137 @@ const punkty = {
         czarny: {jesien_zgaszona: 1, jesien_ciemna: 1, zima_chlodna: 1, zima_ciemna: 2},
         rudy: {wiosna_jasna: 1, wiosna_ciepla: 1, jesien_zgaszona: 2, jesien_ciepla: 2, jesien_ciemna: 1},
         miedziany: {wiosna_jasna: 1, wiosna_ciepla:2, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna:1}
+    },
+
+    chai_now: {
+        bardzo_jasny_blond: {wiosna_jasna: 2, wiosna_czysta: 1, lato_jasne: 2, lato_chlodne: 1},
+        jasny_zloty_blond: {wiosna_jasna: 2, wiosna_ciepla: 2, wiosna_czysta: 1, jesien_ciepla: 1, jesien_zgaszona: 1},
+        jasny_popielaty_blond: {lato_jasne: 2, lato_chlodne: 2, lato_zgaszone: 1, zima_chlodna: 1},
+        ciemny_blond: {lato_chlodne: 1, lato_zgaszone: 2, jesien_zgaszona: 2, jesien_ciepla: 1},
+        jasny_braz: {wiosna_ciepla: 1, lato_chlodne: 1, lato_zgaszone: 2, jesien_zgaszona: 2, jesien_ciepla: 2, jesien_ciemna:1},
+        sredni_braz: {wiosna_ciepla: 1, lato_zgaszone: 1, jesien_zgaszona: 2, jesien_ciepla: 2, jesien_ciemna: 2, zima_ciemna:1},
+        ciemny_braz: {lato_zgaszone: 1, jesien_zgaszona: 1, jesien_ciepla: 1, jesien_ciemna: 2, zima_chlodna: 1, zima_ciemna: 2},
+        bardzo_ciemny_braz: {jesien_zgaszona: 1, jesien_ciepla: 1, jesien_ciemna: 2, zima_chlodna: 1, zima_ciemna: 2},
+        czarny: {jesien_zgaszona: 1, jesien_ciemna: 1, zima_chlodna: 1, zima_ciemna: 2},
+        rudy: {wiosna_jasna: 1, wiosna_ciepla: 1, jesien_zgaszona: 2, jesien_ciepla: 2, jesien_ciemna: 1},
+        miedziany: {wiosna_jasna: 1, wiosna_ciepla:2, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna:1}
+    },
+
+    hair_light: {
+        zloty: {wiosna_jasna: 1, wiosna_ciepla: 2, wiosna_czysta: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 1},
+        miedziany: {wiosna_ciepla: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 1},
+        popielaty: {lato_jasne: 1, lato_chlodne: 2, lato_zgaszone: 1, zima_czysta: 1, zima_chlodna: 1},
+        neutralne: {wiosna_jasna: 1, wiosna_ciepla: 1, wiosna_czysta: 1, lato_jasne: 1, lato_chlodne: 1, lato_zgaszone: 1, jesien_zgaszona: 1, jesien_ciepla: 1, jesien_ciemna: 1, zima_czysta: 1, zima_chlodna: 1, zima_ciemna: 1},
+        ciemne: {lato_chlodne: 1, jesien_ciepla: 1, jesien_zgaszona: 1, jesien_ciemna: 2, zima_czysta: 1, zima_chlodna: 1, zima_ciemna: 2}
+    },
+
+    hair_sun: {
+        jasnieja: {wiosna_jasna: 2, wiosna_ciepla: 1, wiosna_czysta: 1, lato_jasne: 2, lato_chlodne: 1, lato_zgaszone: 1},
+        zlote: {wiosna_jasna: 1, wiosna_ciepla:2, wiosna_czysta: 1, jesien_zgaszona: 1, jesien_ciemna: 1, jesien_ciepla: 2},
+        miedziane: {wiosna_ciepla: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 1}, 
+        lekko_jasnieja: {wiosna_jasna: 1, wiosna_ciepla: 1, wiosna_czysta: 1, lato_jasne: 1, lato_chlodne: 1, lato_zgaszone: 1, jesien_zgaszona: 1, jesien_ciepla: 1},
+        brak: {lato_chlodne: 1, lato_zgaszone:1, jesien_ciemna: 1, zima_czysta: 1, zima_chlodna: 2, zima_ciemna: 2}
+    },
+
+    hair_reflections: {
+        zlote: {wiosna_jasna: 1, wiosna_ciepla: 2, wiosna_czysta: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 1, },
+        miedziane: {wiosna_ciepla: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 1},
+        popielate: {lato_jasne: 1, lato_chlodne: 2, lato_zgaszone: 1, zima_czysta: 1, zima_chlodna:1},
+        czerwone: {wiosna_ciepla: 1, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna: 2},
+        brak: {wiosna_ciepla: 1, wiosna_czysta: 1, wiosna_jasna: 1, lato_chlodne:1, lato_jasne: 1, lato_zgaszone: 1, jesien_ciemna: 1, jesien_ciepla: 1, jesien_zgaszona: 1, zima_chlodna: 1, zima_ciemna:1, zima_czysta: 1}
+    },
+
+    eyes_color: {
+        light_blue: {wiosna_jasna: 1, wiosna_czysta: 2, lato_jasne:2, lato_chlodne: 1, lato_zgaszone: 1, zima_czysta: 2, zima_chlodna: 1},
+        dark_blue: {wiosna_czysta: 1, lato_chlodne: 1, lato_zgaszone: 1, zima_czysta: 2, zima_chlodna: 2, zima_ciemna: 1},
+        steel_blue: {lato_jasne: 1, lato_chlodne: 2, lato_zgaszone: 2, zima_czysta: 1, zima_chlodna: 2, zima_ciemna: 1},
+        gray: {},
+        green: {},
+        green_gray: {},
+        hazel: {},
+        light_brown: {},
+        medium_brown: {},
+        dark_brown: {},
+        black: {}
+
     }
+}
+
+function pobierz(nazwa) {
+  const radios = document.getElementsByName(nazwa);
+
+  for (let r of radios) {
+    if (r.checked) return r.value;
+  }
+
+  return null;
+}
+
+function licz() {
+
+  for (let nazwa of pytania) {
+
+    let odp = pobierz(nazwa);
+
+    if (odp && punkty[nazwa] && punkty[nazwa][odp]) {
+
+      let dane = punkty[nazwa][odp];
+
+      for (let typ in dane) {
+        wyniki[typ] += dane[typ];
+      }
+    }
+  }
+
+  console.log(wyniki);
+}
+
+function licz() {
+
+  // reset
+  for (let typ in wyniki) {
+    wyniki[typ] = 0;
+  }
+
+  for (let nazwa of pytania) {
+
+    let odp = pobierz(nazwa);
+
+    if (odp && punkty[nazwa] && punkty[nazwa][odp]) {
+
+      let dane = punkty[nazwa][odp];
+
+      for (let typ in dane) {
+        wyniki[typ] += dane[typ];
+      }
+    }
+  }
+
+  let maxTyp = null;
+  let max = -1;
+
+  for (let typ in wyniki) {
+    if (wyniki[typ] > max) {
+      max = wyniki[typ];
+      maxTyp = typ;
+    }
+  }
+
+  const nazwy = {
+    wiosna_jasna: "Wiosna jasna 🌸",
+    wiosna_ciepla: "Wiosna ciepła 🌼",
+    wiosna_czysta: "Wiosna czysta ✨",
+    lato_jasne: "Lato jasne 🌿",
+    lato_chlodne: "Lato chłodne ❄️",
+    lato_zgaszone: "Lato zgaszone 🌫️",
+    jesien_zgaszona: "Jesień zgaszona 🍂",
+    jesien_ciepla: "Jesień ciepła 🍁",
+    jesien_ciemna: "Jesień ciemna 🌰",
+    zima_czysta: "Zima czysta 💎",
+    zima_chlodna: "Zima chłodna 🧊",
+    zima_ciemna: "Zima ciemna 🌑"
+  };
+
+  document.getElementById("wynik").textContent =
+    "Twój typ urody to: " + nazwy[maxTyp];
 }
