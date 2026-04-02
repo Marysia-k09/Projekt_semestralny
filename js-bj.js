@@ -138,5 +138,5 @@ function licz_i_przejdz() {
     let maxTyp = Object.keys(wyniki).reduce((a, b) => wyniki[a] > wyniki[b] ? a : b);
 
     localStorage.setItem("typUrody", maxTyp);
-    window.location.href = "wynik.html";
+    window.location.href = "wyniki-bj.html";
 }
