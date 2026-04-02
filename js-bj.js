@@ -121,52 +121,34 @@ function licz() {
   console.log(wyniki);
 }
 
-function licz() {
-
-  // reset
-  for (let typ in wyniki) {
-    wyniki[typ] = 0;
-  }
-
-  for (let nazwa of pytania) {
-
-    let odp = pobierz(nazwa);
-
-    if (odp && punkty[nazwa] && punkty[nazwa][odp]) {
-
-      let dane = punkty[nazwa][odp];
-
-      for (let typ in dane) {
-        wyniki[typ] += dane[typ];
-      }
+function licz_i_przejdz() {
+    // reset wyników
+    for (let typ in wyniki) {
+        wyniki[typ] = 0;
     }
-  }
 
-  let maxTyp = null;
-  let max = -1;
-
-  for (let typ in wyniki) {
-    if (wyniki[typ] > max) {
-      max = wyniki[typ];
-      maxTyp = typ;
+    for (let nazwa of pytania) {
+        let odp = pobierz(nazwa);
+        if (odp && punkty[nazwa] && punkty[nazwa][odp]) {
+            let dane = punkty[nazwa][odp];
+            for (let typ in dane) {
+                wyniki[typ] += dane[typ];
+            }
+        }
     }
-  }
 
-  const nazwy = {
-    wiosna_jasna: "Wiosna jasna 🌸",
-    wiosna_ciepla: "Wiosna ciepła 🌼",
-    wiosna_czysta: "Wiosna czysta ✨",
-    lato_jasne: "Lato jasne 🌿",
-    lato_chlodne: "Lato chłodne ❄️",
-    lato_zgaszone: "Lato zgaszone 🌫️",
-    jesien_zgaszona: "Jesień zgaszona 🍂",
-    jesien_ciepla: "Jesień ciepła 🍁",
-    jesien_ciemna: "Jesień ciemna 🌰",
-    zima_czysta: "Zima czysta 💎",
-    zima_chlodna: "Zima chłodna 🧊",
-    zima_ciemna: "Zima ciemna 🌑"
-  };
+    let maxTyp = null;
+    let max = -1;
+    for (let typ in wyniki) {
+        if (wyniki[typ] > max) {
+            max = wyniki[typ];
+            maxTyp = typ;
+        }
+    }
 
-  document.getElementById("wynik").textContent =
-    "Twój typ urody to: " + nazwy[maxTyp];
+    // zapis wyniku do localStorage, żeby druga strona mogła go odczytać
+    localStorage.setItem("typUrody", maxTyp);
+
+    // przejście na stronę wyników
+    window.location.href = "wyniki-bj.html";
 }

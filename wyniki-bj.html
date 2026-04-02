@@ -14,6 +14,28 @@
 
 <a href="index.html">Powrót</a>
 
-<script src="js-bj.js"></script>
+<script>
+    const nazwy = {
+        wiosna_jasna: "Wiosna jasna 🌸",
+        wiosna_ciepla: "Wiosna ciepła 🌼",
+        wiosna_czysta: "Wiosna czysta ✨",
+        lato_jasne: "Lato jasne 🌿",
+        lato_chlodne: "Lato chłodne ❄️",
+        lato_zgaszone: "Lato zgaszone 🌫️",
+        jesien_zgaszona: "Jesień zgaszona 🍂",
+        jesien_ciepla: "Jesień ciepła 🍁",
+        jesien_ciemna: "Jesień ciemna 🌰",
+        zima_czysta: "Zima czysta 💎",
+        zima_chlodna: "Zima chłodna 🧊",
+        zima_ciemna: "Zima ciemna 🌑"
+    };
+
+    // odczyt z localStorage i wyświetlenie
+    const typ = localStorage.getItem("typUrody");
+    if (typ) {
+        document.getElementById("wynik").textContent =
+            "Twój typ urody to: " + nazwy[typ];
+    }
+</script>
 </body>
 </html>
