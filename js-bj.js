@@ -16,7 +16,7 @@ zima_chlodna:0,
 zima_ciemna:0
 };
 
-const pytania = ["hair_child", "chai_now", "hair_light", "hair_sun", "hair_reflections", "eyes_color",
+const pytania = ["hair_child", "hair_now", "hair_light", "hair_sun", "hair_reflections", "eyes_color",
     "eyes_intensity", "eyes_extra", "eyes_ring", "eyes_type", "skin_color", "skin_sun",
     "undertone", "czerwienienie", 'piegi', "kolor_piegow", "kontrast_wlosy", "kontrast_oczy",
     "kontrast_makijaz", "brwi", "uroda", "oczy_wlosy", "skora_wlosy", "kol_natural",
@@ -38,7 +38,7 @@ const punkty = {
         miedziany: {wiosna_jasna: 1, wiosna_ciepla:2, jesien_zgaszona: 1, jesien_ciepla: 2, jesien_ciemna:1}
     },
 
-    chai_now: {
+    hair_now: {
         bardzo_jasny_blond: {wiosna_jasna: 2, wiosna_czysta: 1, lato_jasne: 2, lato_chlodne: 1},
         jasny_zloty_blond: {wiosna_jasna: 2, wiosna_ciepla: 2, wiosna_czysta: 1, jesien_ciepla: 1, jesien_zgaszona: 1},
         jasny_popielaty_blond: {lato_jasne: 2, lato_chlodne: 2, lato_zgaszone: 1, zima_chlodna: 1},
@@ -122,33 +122,21 @@ function licz() {
 }
 
 function licz_i_przejdz() {
-    // reset wyników
-    for (let typ in wyniki) {
-        wyniki[typ] = 0;
-    }
-
-    for (let nazwa of pytania) {
-        let odp = pobierz(nazwa);
-        if (odp && punkty[nazwa] && punkty[nazwa][odp]) {
-            let dane = punkty[nazwa][odp];
-            for (let typ in dane) {
-                wyniki[typ] += dane[typ];
+    const radios = document.querySelectorAll('input[type="radio"]:checked');
+    radios.forEach(r => {
+        const q = r.name;
+        const v = r.value;
+        if (punkty[q] && punkty[q][v]) {
+            const typy = punkty[q][v];
+            for (let t in typy) {
+                wyniki[t] += typy[t];
             }
         }
-    }
+    });
 
-    let maxTyp = null;
-    let max = -1;
-    for (let typ in wyniki) {
-        if (wyniki[typ] > max) {
-            max = wyniki[typ];
-            maxTyp = typ;
-        }
-    }
+    // znajdź typ z max punktami
+    let maxTyp = Object.keys(wyniki).reduce((a, b) => wyniki[a] > wyniki[b] ? a : b);
 
-    // zapis wyniku do localStorage, żeby druga strona mogła go odczytać
     localStorage.setItem("typUrody", maxTyp);
-
-    // przejście na stronę wyników
-    window.location.href = "wyniki-bj.html";
+    window.location.href = "wynik.html";
 }
