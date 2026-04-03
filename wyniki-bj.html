@@ -4,6 +4,106 @@
 <meta charset="UTF-8">
 <title>Wynik</title>
 <link rel="stylesheet" href="css-bj.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #f5eee6, #e4cbb3);
+}
+
+/* KARTA */
+body > * {
+    max-width: 500px;
+    width: 90%;
+}
+
+#wynik, #colors, h1, a {
+    text-align: center;
+}
+
+/* CONTAINER (pseudo bo nie masz diva 😏) */
+body {
+    flex-direction: column;
+}
+
+/* TYTUŁ */
+h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #5c3b1e;
+}
+
+/* WYNIK BOX */
+#wynik {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #6e4c2b;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+
+    animation: fadeIn 0.7s ease;
+}
+
+/* PODBICIE NAZWY TYPU */
+#wynik span {
+    display: block;
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #c05a2b;
+}
+
+/* LINK */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+
+    background: #c05a2b;
+    color: white;
+
+    padding: 12px 28px;
+    border-radius: 12px;
+
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #9e471f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ANIMACJA */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 </head>
 <body>
 
@@ -33,8 +133,8 @@
     // odczyt z localStorage i wyświetlenie
     const typ = localStorage.getItem("typUrody");
     if (typ) {
-        document.getElementById("wynik").textContent =
-            "Twój typ urody to: " + nazwy[typ];
+        document.getElementById("wynik").innerHTML =
+    'Twój typ urody to:<span>' + nazwy[typ] + '</span>';
     }
 </script>
 </body>
